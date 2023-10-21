@@ -1,13 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Col } from 'react-bootstrap'
 import CardList from './CardList'
+import './ItemList.css'
 
 const ItemList = ({items}) => {
   return (
     <>
     {
       items.map( (item) => (
-        <Col md={4} lg={3} xs={12} key={item.id} category={item.category}>
+        <Col className='product-container' key={item.id} categoryId={item.category}>
           <CardList item={item}/>
         </Col>
       ))
@@ -16,5 +18,8 @@ const ItemList = ({items}) => {
   )
 }
 
+ItemList.propTypes = {
+  items: PropTypes.array.isRequired
+}
 
 export default ItemList

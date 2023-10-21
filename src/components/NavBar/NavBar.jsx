@@ -1,27 +1,20 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import {NavLink} from 'react-router-dom'
-
+import Counter from '../Counter/Counter';
+import { FaShoppingCart } from "react-icons/fa";
+import './NavBar.css'
 const NavBar = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="navbar bg-warning">
       <Container>
-        <NavLink to="/">Hogwarst's Student</NavLink>
+        <NavLink to="/"><img className='logo' src="https://res.cloudinary.com/dxksxp1nx/image/upload/v1697677456/zemqmeuwugeausu5eoot.png" alt="logo" /></NavLink>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About Us</NavLink>
-            <NavDropdown title="Houses" id="basic-nav-dropdown">
-              <NavLink to='/category/Gryffindor'>Gryffindor</NavLink>
-              <NavLink to='/category/Slytherin'>Slytherin</NavLink>
-              <NavLink to='/category/Hufflepuff'>Hufflepuff</NavLink>
-              <NavLink to='/category/Ravenclaw'>Ravenclaw</NavLink>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
+              <NavLink to="/">Inicio</NavLink>
+              <NavLink to='/category/dog'>Perros</NavLink>
+              <NavLink to='/category/cat'>Gatos</NavLink>
+              <NavLink to="/cart"><FaShoppingCart/></NavLink>
       </Container>
     </Navbar>
   );

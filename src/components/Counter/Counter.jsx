@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Button } from 'react-bootstrap'
 
-const Counter = () => {
+const Counter = ({onAdd}) => {
     const [count, setCount] = useState(0)
 
     const increment = () => {
@@ -15,8 +16,13 @@ const Counter = () => {
     <Button onClick={increment}>Agregar</Button>
     <span>{count}</span>
     <Button onClick={decrement}>Quitar</Button>
+    <Button onClick={() => onAdd(count)}>Agregar al carrito</Button>
     </>
   )
+}
+
+Counter.propTypes = {
+  onAdd: PropTypes.func.isRequired
 }
 
 export default Counter

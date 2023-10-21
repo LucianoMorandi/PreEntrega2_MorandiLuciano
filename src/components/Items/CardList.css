@@ -1,0 +1,38 @@
+.product {
+    border-radius: 10px;
+    width: 150%;
+   
+}
+
+.product:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+.product:hover img {
+    transform: scale(1.1);
+}
+
+figure{
+    overflow: hidden;
+}
+
+figure img {
+    width: 90%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    transition: all .5s;
+}
+
+.info-product {
+    padding: 15px 30px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}

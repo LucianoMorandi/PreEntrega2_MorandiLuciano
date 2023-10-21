@@ -1,30 +1,28 @@
 import React from 'react'
-// import Counter from '../Counter/Counter'
+import PropTypes from 'prop-types'
+import Counter from '../Counter/Counter'
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item, onAdd}) => {
   console.log(item)
   return (
     <div>
         <h5>{item.name}</h5>
         <img src={item.image} alt="" />
         <p>
-           Gender: {item.gender}
+           {item.description}
         </p>
         <p>
-            House: {item.house}
+            Precio: ${item.price}
         </p>
-        <p>
-            Birthday: {item.dateOfBirth}
-        </p>
-        <p>
-            Patronus: {item.patronus}
-        </p>
-        <p>
-            Other Names: {item.alternate_names}
-        </p>
-        {/* <Counter/> */}
+        
+        <Counter onAdd={onAdd} />
     </div>
   )
+}
+
+ItemDetail.propTypes = {
+    item: PropTypes.object.isRequired,
+    onAdd: PropTypes.func.isRequired
 }
 
 export default ItemDetail

@@ -3,11 +3,10 @@ import ItemListContainer from '../components/Items/ItemListContainer'
 import { useParams } from 'react-router-dom'
 
 const Home = () => {
-  
+  const {category} = useParams()
   return (
     <>
-    Home
-    <ItemListContainer/>
+    <ItemListContainer categoryId={category}/>
     </>
   )
 }

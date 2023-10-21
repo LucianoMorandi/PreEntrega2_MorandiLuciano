@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 const useFetch = (url) => {
     const [data, setData] = useState(null)
@@ -14,6 +15,10 @@ const useFetch = (url) => {
         getData()
     }, [])
   return [data]
+}
+
+useFetch.propTypes ={
+    url: PropTypes.string.isRequired
 }
 
 export default useFetch
